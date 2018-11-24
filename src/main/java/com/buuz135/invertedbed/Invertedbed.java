@@ -48,7 +48,8 @@ import net.minecraftforge.oredict.OreDictionary;
 @Mod(
         modid = Invertedbed.MOD_ID,
         name = Invertedbed.MOD_NAME,
-        version = Invertedbed.VERSION
+        version = Invertedbed.VERSION,
+        dependencies = "required-after:forge@[14.23.5.2776,);"
 )
 public class Invertedbed {
 
