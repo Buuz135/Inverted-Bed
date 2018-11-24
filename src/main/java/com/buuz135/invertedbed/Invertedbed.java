@@ -29,6 +29,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -68,7 +69,9 @@ public class Invertedbed {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         if (event.getSide() == Side.CLIENT) registerTESR();
-        OreDictionary.registerOre("blockWool", Blocks.WOOL);
+        for (int i = 0; i < 16; i++) {
+            OreDictionary.registerOre("blockWool", new ItemStack(Blocks.WOOL, 1, i));
+        }
     }
 
     @Mod.EventHandler

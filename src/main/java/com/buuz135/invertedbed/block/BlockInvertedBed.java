@@ -24,9 +24,12 @@ package com.buuz135.invertedbed.block;
 import com.buuz135.invertedbed.Invertedbed;
 import com.buuz135.invertedbed.tile.TileEntityInvertedBed;
 import net.minecraft.block.BlockBed;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -38,12 +41,15 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
 public class BlockInvertedBed extends BlockBed {
 
     public BlockInvertedBed() {
         this.setRegistryName(Invertedbed.MOD_ID, "bed");
         this.setTranslationKey("invertedbed.bed");
+        setSoundType(SoundType.WOOD);
+        setHardness(0.2F);
     }
 
     @Override
@@ -119,6 +125,18 @@ public class BlockInvertedBed extends BlockBed {
     @Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
         return new ItemStack(Invertedbed.ITEM_INVERTED_BED);
+    }
+
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+        return state.getValue(PART) == BlockBed.EnumPartType.FOOT ? Items.AIR : Invertedbed.ITEM_INVERTED_BED;
+    }
+
+    @Override
+    public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune) {
+        if (state.getValue(PART) == BlockBed.EnumPartType.HEAD) {
+            spawnAsEntity(worldIn, pos, new ItemStack(Invertedbed.ITEM_INVERTED_BED, 1));
+        }
     }
 
     @Nullable

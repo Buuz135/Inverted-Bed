@@ -45,6 +45,7 @@ public class ItemInvertedBed extends Item {
         this.setCreativeTab(CreativeTabs.DECORATIONS);
         this.setRegistryName(Invertedbed.MOD_ID, "bed_item");
         this.setTranslationKey("invertedbed.bed");
+        this.setMaxStackSize(1);
     }
 
     @Override
