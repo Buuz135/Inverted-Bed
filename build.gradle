@@ -83,7 +83,7 @@ processResources {
 
 jar{
     manifest{
-        attributes "FMLAT": "Portality_at.cfg"
+        attributes "FMLAT": "InvertBed_at.cfg"
     }
 }
 
