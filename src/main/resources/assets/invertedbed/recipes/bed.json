@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "invertedbed:bed_item"
+  },
+  "pattern": [
+    "   ",
+    "ppp",
+    "www"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "p": {
+      "item": "#PLANKWOOD"
+    },
+    "w": {
+      "item": "#WOOL"
+    }
+  }
+}
