@@ -1,0 +1,20 @@
+[
+  {
+    "modid": "invertedbed",
+    "name": "InvertedBed",
+    "description": "A simple mod that adds a bed that allows you to sleep through the day",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Buuz135"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": [
+      ""
+    ]
+  }
+]
